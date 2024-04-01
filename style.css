@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+#productList{
+
+    background-color: rgb(164, 211, 211);
+      /* border: 1px solid red; */
+}
+#Product{
+    
+    border: 1px solid red;
+    /* margin: 10px 15px 10px 15px ; */
+    margin-left: 20%;
+    margin-right: 20%;
+    /* padding: 20px 10px 20px 10px; */
+    /* display: flex; */
+    padding: 20px 10px;
+    font-weight: bold;
+    font-size: 25px;
+
+}
+img{
+    /* border: 1px solid red; */
+     margin-left: 10%;
+     margin-right: 10%;
+    height: 50vh;
+    width: 30vw;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: -10px;
+    padding-bottom: -10%;
+    border-radius: 5%;
+    
+}

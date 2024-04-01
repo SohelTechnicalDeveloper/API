@@ -558,4 +558,76 @@ var data = {
     "limit": 30
   }
 
-  console.log(data)
+        //    //Data access
+        //    console.log(data.products[0].id)
+        //    console.log(data.products[0].title)
+        //    console.log(data.products[0].description)
+        //    console.log(data.products[0].price)
+        //    console.log(data.products[0].rating)
+        //    console.log(data['products'][0].brand)
+        //    console.log(data.products[0].images)
+      
+
+  var product_list = data.products ;
+  
+
+  let html = "";
+   
+//    for(let i=0;i<product_list.length;i++)
+
+//    {
+
+//       html+=`<li> Title = ${product_list[i].title}<br>  Brand = ${product_list[i].brand}<br>  Price = ${product_list[i].price }<br> Rating : ${product_list[i].rating} <br> `
+     
+//       document.getElementById('productList').innerHTML = html;
+//     }
+
+
+  html = product_list.map( item => `<li id="Product"> Title = ${item.title} <br>  Brand = ${item.brand}<br>  Price = ${item.price}<br> Rating : ${item.rating} <br> Category = ${item.category} <img src="${item.thumbnail}">`)
+    
+       document.getElementById('productList').innerHTML = html;
+
+
+// const  searchProductbybrand = (item) =>
+// {
+//     //   html+=`<li> Title = ${product_list[i].title}<br>  Brand = ${product_list[i].brand}<br>  Price = ${product_list[i].price }<br> Rating : ${product_list[i].rating} <br> `
+
+//     if(item.price<500)
+//     {
+//         return true;
+//     }
+// }   
+
+//  html = product_list.filter(searchProductbybrand);
+ 
+//     console.log(html)
+ 
+//     html+=`<li> Title = ${product_list[i].title}<br>  Brand = ${product_list[i].brand}<br>  Price = ${product_list[i].price }<br> Rating : ${product_list[i].rating} <br> `
+//     document.getElementById('productList').innerHTML = html;
+    
+
+
+    
+   
+   
+   
+   
+//    const searchProductByPirce =(item)=> 
+//     {
+//         if(item.price < 500)
+//         {
+//             return true
+//         }
+      
+//     }
+//     const searchProductbybrand =(item)=>{
+         
+//          if(item.brand==="Apple")
+//          {
+//              return true;
+//          }
+//     }
+
+//    let temp= product_list.filter(searchProductbybrand);
+
+//       console.log(temp)
