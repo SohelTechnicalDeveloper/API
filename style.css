@@ -34,15 +34,26 @@ img{
 
 #input{
 
-      height: 25px;
-
+      height: 35px;
+      margin-right: 35%;
+      margin-left: 35%;
+      width: 250px;
 }
 #btn{
      
     padding: 5px 5px 5px 5px;
+     margin-right: 35%;
+     margin-left: 35%;
 }
 .Search{
      
      padding: 15px 20px 15px 20px ;
      /* border: 1px solid red; */
+}
+#heading{
+     
+     /* border: 1px solid red; */
+     margin-right: 35%;
+     margin-left: 35%;
+     padding: 10px 5px 10px 5px ;
 }
