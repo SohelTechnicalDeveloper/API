@@ -1,16 +1,7 @@
 
-        //    //Data access
-        //    console.log(data.products[0].id)
-        //    console.log(data.products[0].title)
-        //    console.log(data.products[0].description)
-        //    console.log(data.products[0].price)
-        //    console.log(data.products[0].rating)
-        //    console.log(data['products'][0].brand)
-        //    console.log(data.products[0].images)
-      
-
+       
         var product_list = data.products ;
-  
+       show(product_list)
 
         let html = "";
          
@@ -19,30 +10,50 @@
         //     html+=`<li> Title = ${product_list[i].title}<br>  Brand = ${product_list[i].brand}<br>  Price = ${product_list[i].price }<br> Rating : ${product_list[i].rating} <br> `
         //         document.getElementById('productList').innerHTML = html;
         //   }
+         //html = product_list.map( item => `<li id="Product"> Id = ${item.id} <br> Title = ${item.title} <br>  Brand = ${item.brand}<br>  Price = ${item.price}<br> Rating : ${item.rating} <br> Category = ${item.category} <img src="${item.thumbnail}">`)
       
-      
-             html = product_list.map( item => `<li id="Product"> Id = ${item.id} <br> Title = ${item.title} <br>  Brand = ${item.brand}<br>  Price = ${item.price}<br> Rating : ${item.rating} <br> Category = ${item.category} <img src="${item.thumbnail}">`)
+         function show(products) 
+         {
+
+            let html= products.map((item)=>{
+               
+                 return `<li> Brand =  ${item.brand} <br> Categroy = ${item.category}, <br> Price = ${item.price} <br> Rating : ${item.rating} <br>   <img src="${item.thumbnail}",  </li>`
+              
+            })
           
-             document.getElementById('productList').innerHTML = html;
+            document.getElementById('productList').innerHTML = html;
+         }
+      
+          
       
       
-             const searchInput = document.querySelector('#input');
-        
+             
+          var searchInput = document.querySelector('#input');
              searchInput.addEventListener("keyup", function() 
              {
-               let html = product_list.filter((item)=>{
+               let html = product_list.filter((item)=>
+                {
                   
-                  if(item.title.toLowerCase().includes(this.value.toLowerCase()))
+                  if(item.brand.toLowerCase().includes(this.value.toLowerCase()))
                   {
                     return true;
                   }
+                  if(item.category.toLowerCase().includes(this.value.toLowerCase))
+                  {
+                     return true;
+                  }
+
+                  if(item.title.toLowerCase().includes(this.value.toLowerCase))
+                  {
+                     return true;
+                  }
                })
               
-               document.getElementById('productList').innerHTML = html;
+              //  document.getElementById('productList').innerHTML = html;
+              show(html)
              })
       
            
-      
       
       
       
@@ -108,7 +119,10 @@
       
       //   const searchProductByPirce = item => item.price< 500;
               
-      //   product_list = product_list.filter( (item) =>{ return item.price< 500 })
+      //   product_list = product_list.filter( (item) =>{ 
+      //    if(item.price< 500 )
+      //      return true;
+      // })
       
       
        
