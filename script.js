@@ -10,7 +10,7 @@
         //     html+=`<li> Title = ${product_list[i].title}<br>  Brand = ${product_list[i].brand}<br>  Price = ${product_list[i].price }<br> Rating : ${product_list[i].rating} <br> `
         //         document.getElementById('productList').innerHTML = html;
         //   }
-         //html = product_list.map( item => `<li id="Product"> Id = ${item.id} <br> Title = ${item.title} <br>  Brand = ${item.brand}<br>  Price = ${item.price}<br> Rating : ${item.rating} <br> Category = ${item.category} <img src="${item.thumbnail}">`)
+         // html = product_list.map( item => `<li id="Product"> Id = ${item.id} <br> Title = ${item.title} <br>  Brand = ${item.brand}<br>  Price = ${item.price}<br> Rating : ${item.rating} <br> Category = ${item.category} <img src="${item.thumbnail}">`)
       
          function show(products) 
          {
@@ -38,15 +38,15 @@
                   {
                     return true;
                   }
-                  if(item.category.toLowerCase().includes(this.value.toLowerCase))
-                  {
-                     return true;
-                  }
+                  // if(item.category.toLowerCase().includes(this.value.toLowerCase))
+                  // {
+                  //    return true;
+                  // }
 
-                  if(item.title.toLowerCase().includes(this.value.toLowerCase))
-                  {
-                     return true;
-                  }
+                  // if(item.title.toLowerCase().includes(this.value.toLowerCase))
+                  // {
+                  //    return true;
+                  // }
                })
               
               //  document.getElementById('productList').innerHTML = html;
