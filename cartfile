@@ -1,0 +1,2 @@
+<li class="list"><br> <img class="img" src="${item.thumbnail}">  <b>Product Id : ${item.id} <br> <button id="button">ADD CART</button> <br> Brand Name : ${item.brand} <br> Title : ${item.title}  <br> Price : $${item.price}  <br> Category : ${item.category} <br> Rating : ${item.rating} <br>Description : ${item.description} <br>
+               </li> `

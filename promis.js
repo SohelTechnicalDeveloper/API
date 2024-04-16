@@ -33,7 +33,9 @@
 //  console.log(fun())
 
 
+
 var productName ="";
+
 async function show() 
 {
      let api =  await fetch('https://dummyjson.com/products/');
@@ -41,53 +43,119 @@ async function show()
      let data = await api.json();
      productName = data.products
      
-             
-            console.log(data)
-
-             let html ="";
-          html =  productName.map((item)=>{
+             console.log(productName)
+             var html =`<div class="row row-item ">`;
+          html +=  productName.map((item)=>{
                 
-               return `<li> ${item.brand} ,  ${item.title} , ${item.category} , ${item.rating} </li>`
+               return `
+            <div class="col-sm-3">
+                <div class="single-item">
+                   <div class="productImage"> <img src="${item.thumbnail}" alt="image"> </div> 
+                     <h4> ${item.title} </h4>
+                     <h6>Rating : ${item.rating}</h6>
+                     Price :    $${item.price} <br><br> 
+                     <button id="" class="add-to-cart btn btn-primary">ADD CART</button>
+                 </div>
+            </div>
+                  
+                  `
                  
              }).join("")
 
+             html+=`</div>`
+
          document.getElementById('productList').innerHTML = html;
-         
          
          // console.log(api)
       }
    show();   
-// show(productName)
 
-var searchInput = document.querySelector('#input');
-    searchInput.addEventListener('keyup',function()
-     {
-      //   let productName = "";        
-        let html = productName.filter((product)=>
-        {           
-            if(product.brand.toLowerCase().includes(this.value.toLowerCase()))
-            {
+// var searchInput = document.querySelector('#input');
+//     searchInput.addEventListener('keyup',function()
+//      {
+//       //   let productName = "";        
+//         let html = productName.filter((product)=>
+//         {           
+//             if(product.brand.toLowerCase().includes(this.value.toLowerCase()))
+//             {
 
-                 return true;
-            }
-            if(product.title.toLowerCase().includes(this.value.toLowerCase()))
-            {
-                return true
-            }
-            if(product.category.toLowerCase().includes(this.value.toLowerCase()))
-            {
-                return true;
-            }
-      })
-
-      html = html.map((item)=>{
+//                  return true;
+//             }
+//             if(product.title.toLowerCase().includes(this.value.toLowerCase()))
+//             {
+//                 return true
+//             }
+//             if(product.category.toLowerCase().includes(this.value.toLowerCase()))
+//             {
+//                 return true;
+//             }
+//       })
+ 
+//       html = html.map((item)=>{
            
-            return `<li> ${item.brand} ,  ${item.title} , ${item.category} , ${item.rating} </li>`
-      }).join("")
+//             return ` <li class="list"><br> <img class="img" src="${item.thumbnail}">  <b>  Name : ${item.brand} <br> Title : ${item.title}  <br> Price : $${item.price}  <br> Category : ${item.category} <br> Rating : ${item.rating} <br> <br> <button id="button">ADD CART</button>  <br> <br>
+//             </li> `
+//       }).join("")
       
-         document.getElementById('productList').innerHTML = html;
+//          document.getElementsByClassName('productList').innerHTML = html;
        
-    })  
+//     })  
+
+// var productName ="";
+// async function show() 
+// {
+//      let api =  await fetch('https://dummyjson.com/products/');
+     
+//      let data = await api.json();
+//      productName = data.products
+     
+             
+//             console.log(data)
+
+//              let html ="";
+//           html =  productName.map((item)=>{
+                
+//                return ` <li class="list"><br> <img class="img" src="${item.thumbnail}">  <b> <br> Brand-Name : ${item.brand} <br> Title : ${item.title}  <br> Price : $${item.price}  <br> Category : ${item.category} <br> Rating : ${item.rating} <br> <br> <button id="button">ADD CART</button>  <br> <br>
+//                </li> `
+                 
+//              }).join("")
+
+//          document.getElementsByClassName('productList').innerHTML = html;
+         
+//          // console.log(api)
+//       }
+//    show();   
+
+// var searchInput = document.querySelector('#input');
+//     searchInput.addEventListener('keyup',function()
+//      {
+//       //   let productName = "";        
+//         let html = productName.filter((product)=>
+//         {           
+//             if(product.brand.toLowerCase().includes(this.value.toLowerCase()))
+//             {
+
+//                  return true;
+//             }
+//             if(product.title.toLowerCase().includes(this.value.toLowerCase()))
+//             {
+//                 return true
+//             }
+//             if(product.category.toLowerCase().includes(this.value.toLowerCase()))
+//             {
+//                 return true;
+//             }
+//       })
+
+//       html = html.map((item)=>{
+           
+//             return ` <li class="list"><br> <img class="img" src="${item.thumbnail}">  <b>  Name : ${item.brand} <br> Title : ${item.title}  <br> Price : $${item.price}  <br> Category : ${item.category} <br> Rating : ${item.rating} <br> <br> <button id="button">ADD CART</button>  <br> <br>
+//             </li> `
+//       }).join("")
+      
+//          document.getElementsByClassName('productList').innerHTML = html;
+       
+//     })  
 
 
 // var searchInput = document.querySelector('#input');
